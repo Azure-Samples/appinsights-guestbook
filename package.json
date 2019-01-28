@@ -1,0 +1,27 @@
+{
+  "name": "guestbook",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "npm install --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "npx nodemon index.js",
+    "client": "npm run dev --prefix client",
+    "start-test": "concurrently \"npm:server\" \"npm:client\"",
+    "start": "node index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "express-validator": "^4.1.1",
+    "mongodb": "2.2.26",
+    "mustache-express": "^1.2.5",
+    "parseurl": "^1.3.2",
+    "path": "^0.12.7",
+    "applicationinsights": "^1.1.0-beta.0"
+  }
+}
