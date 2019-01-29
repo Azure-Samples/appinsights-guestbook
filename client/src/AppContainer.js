@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
+import {ApplicationInsightsMezzurite} from '@microsoft/applicationinsights-mezzurite';
 
-const ai = new ApplicationInsights({config: {instrumentationKey: '4a795cb3-5b9e-4428-8777-0441b7ae7dc8', maxBatchInterval: 100, disableFetchTracking: false}});
+var mzLog = new ApplicationInsightsMezzurite.MezzuritePlugIn();
+const ai = new ApplicationInsights({config: {extensions: [mzLog], instrumentationKey: '4a795cb3-5b9e-4428-8777-0441b7ae7dc8', maxBatchInterval: 100, disableFetchTracking: false}});
 ai.loadAppInsights();
 
 class AppContainer extends Component {
