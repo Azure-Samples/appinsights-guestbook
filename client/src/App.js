@@ -4,7 +4,8 @@ import './App.css';
 import Header from './Header/Header';
 import GBForm from './GBForm/GBForm';
 import GBList from './GBList/GBList';
-import AppContainer from './AppContainer.js'
+import AppContainer from './AppContainer.js';
+import {withMezzuriteRouter} from '@microsoft/mezzurite-react';
 
 class App extends Component {
   render() {
@@ -20,4 +21,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withMezzuriteRouter(App);
