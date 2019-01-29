@@ -1,6 +1,6 @@
 //====LIST DEPENDENCIES===//
 let appInsights = require("applicationinsights");
-appInsights.setup("4a795cb3-5b9e-4428-8777-0441b7ae7dc8").start();
+appInsights.setup("a08f3f2d-9884-4437-b6ec-c835d3d58d82").start();
 const express = require('express');
 const parseurl = require('parseurl');
 const bodyParser = require('body-parser');
