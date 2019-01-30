@@ -2,7 +2,6 @@ import React from 'react';
 import Reflux from 'reflux';
 import GuestStore from '../Stores';
 import axios from 'axios';
-import {withRouter} from 'react-router-dom';
 import './GBForm.css';
 import { withMezzurite } from '@microsoft/mezzurite-react';
 

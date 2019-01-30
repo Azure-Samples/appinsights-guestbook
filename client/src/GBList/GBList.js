@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import './GBList.css';
 import { withMezzurite } from '@microsoft/mezzurite-react';
 
