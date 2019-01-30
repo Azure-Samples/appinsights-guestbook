@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "postinstall": "npm run build",
     "build": "npm install --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "npx nodemon index.js",
