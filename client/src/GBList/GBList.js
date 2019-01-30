@@ -42,4 +42,5 @@ class GBList extends React.Component {
   }
 }
 
+GBList.displayName = 'GBList';
 export default withMezzurite(GBList);

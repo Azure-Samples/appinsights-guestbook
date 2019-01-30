@@ -23,6 +23,7 @@ class AppContainer extends Component {
            <div className="App container">{this.props.children}</div>
         );
     }
-  }
+}
 
-  export default withMezzuriteRouter(AppContainer);
+AppContainer.displayName = 'AppContainer';
+export default withMezzuriteRouter(AppContainer);

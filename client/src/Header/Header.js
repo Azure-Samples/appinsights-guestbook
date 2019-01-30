@@ -23,4 +23,5 @@ class Header extends Component {
   }
 }
 
+Header.displayName = 'Header';
 export default withMezzurite(Header);

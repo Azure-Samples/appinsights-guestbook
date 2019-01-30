@@ -87,4 +87,5 @@ class GBForm extends Reflux.Component {
 
 }
 
+GBForm.displayName = 'GBForm';
 export default withMezzurite(GBForm);
