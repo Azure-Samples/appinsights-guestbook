@@ -2,8 +2,8 @@ import React from 'react';
 import Reflux from 'reflux';
 import GuestStore from '../Stores';
 import axios from 'axios';
-import {withRouter} from 'react-router-dom';
 import './GBForm.css';
+import { withMezzurite } from '@microsoft/mezzurite-react';
 
 class GBForm extends Reflux.Component {
 
@@ -87,4 +87,4 @@ class GBForm extends Reflux.Component {
 
 }
 
-export default withRouter(GBForm);
+export default withMezzurite(GBForm);

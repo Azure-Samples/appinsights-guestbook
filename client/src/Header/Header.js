@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
+import { withMezzurite } from '@microsoft/mezzurite-react';
 
 class Header extends Component {
   render() {
@@ -22,4 +23,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default withMezzurite(Header);

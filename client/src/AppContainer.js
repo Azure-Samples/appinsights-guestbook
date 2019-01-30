@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { ApplicationInsights } from '@microsoft/applicationinsights-web';
+import { ApplicationInsights, Util } from '@microsoft/applicationinsights-web';
+import {MezzuritePlugIn} from '@microsoft/applicationinsights-mezzurite';
+import {withMezzuriteRouter} from '@microsoft/mezzurite-react';
 
-const ai = new ApplicationInsights({config: {instrumentationKey: 'a08f3f2d-9884-4437-b6ec-c835d3d58d82', maxBatchInterval: 100, disableFetchTracking: false}});
+var mzLog = new MezzuritePlugIn();
+const ai = new ApplicationInsights({config: {extensions: [mzLog], instrumentationKey: 'a08f3f2d-9884-4437-b6ec-c835d3d58d82', maxBatchInterval: 100, disableFetchTracking: false}});
 ai.loadAppInsights();
 
 class AppContainer extends Component {
     componentWillMount() {
         ai.trackPageView({});
         this.unlisten = this.props.history.listen((location, action) => {
-        ai.trackPageView({name: location.pathname});
+            ai.core._extensions[2].operation.id = Util.newId();
+            ai.trackPageView({name: location.pathname});
       });
     }
     componentWillUnmount() {
@@ -22,4 +25,4 @@ class AppContainer extends Component {
     }
   }
 
-  export default withRouter(AppContainer);
+  export default withMezzuriteRouter(AppContainer);
