@@ -4,6 +4,8 @@ import './App.css';
 import Header from './Header/Header';
 import GBForm from './GBForm/GBForm';
 import GBList from './GBList/GBList';
+import GBBottom from './GBBottom/GBBottom';
+
 import AppContainer from './AppContainer.js';
 
 class App extends Component {
@@ -14,6 +16,7 @@ class App extends Component {
             <Route path="/" component={Header} />
             <Route exact path="/" component={GBForm} />
             <Route exact path="/guestbook" component={GBList} />
+            <GBBottom />
           </AppContainer>
         </Router>
     );

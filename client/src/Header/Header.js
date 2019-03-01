@@ -11,14 +11,14 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <span className="navbar-brand d-flex">Application Insights Demo Guestbook</span>
-      <div className="divider-vertical navbar-collapse collapse" id="navbar">
-          <ul className="navbar-nav d-flex">
-              <li className="nav-item">
-                  <Link className="nav-link" to={linkTo}>{linkName}</Link>
-              </li>
-          </ul>
-      </div>
-  </nav>
+          <div className="divider-vertical navbar-collapse collapse" id="navbar">
+              <ul className="navbar-nav d-flex">
+                  <li className="nav-item">
+                      <Link className="nav-link" to={linkTo}>{linkName}</Link>
+                  </li>
+              </ul>
+          </div>
+      </nav>
     );
   }
 }
