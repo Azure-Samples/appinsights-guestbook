@@ -13,7 +13,7 @@ class App extends Component {
     return (
         <Router>
           <AppContainer>
-            <Route path="/" component={Header} />
+            <Header />
             <Route exact path="/" component={GBForm} />
             <Route exact path="/guestbook" component={GBList} />
             <GBBottom />
