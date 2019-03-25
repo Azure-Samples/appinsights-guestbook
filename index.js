@@ -1,6 +1,8 @@
 //====LIST DEPENDENCIES===//
-let appInsights = require("applicationinsights");
-appInsights.setup("a08f3f2d-9884-4437-b6ec-c835d3d58d82").start();
+let appInsights = require("./out/applicationinsights");
+appInsights.setup("5d2830ed-8910-4f41-9e77-d534dea79127")
+    .setSendLiveMetrics(true)
+    .start();
 const express = require('express');
 const parseurl = require('parseurl');
 const bodyParser = require('body-parser');
@@ -12,7 +14,7 @@ const session = require('express-session');
 // const Signature = require('./models/signature.js')
 const cors = require('cors')
 var app = express();
-const url = process.env.MONGOLAB_URI;
+const url = process.env.MONGOLAB_URI || "mongodb://appinsights:AppInsightsDemo2019@ds056009.mlab.com:56009/appinsights-demo";
 const DB_NAME = 'appinsights-demo';
 const COLLECTION_NAME = 'guestbook';
 let collection = null;
