@@ -1,6 +1,5 @@
 import React from 'react';
 import './GBList.css';
-import { withMezzurite } from '@microsoft/mezzurite-react';
 
 class GBList extends React.Component {
 
@@ -43,4 +42,4 @@ class GBList extends React.Component {
 }
 
 GBList.displayName = 'GBList';
-export default withMezzurite(GBList);
+export default GBList;

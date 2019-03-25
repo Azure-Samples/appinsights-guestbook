@@ -1,25 +1,26 @@
 # Application Insights Guestbook Demo
 
-This demo is to show how you can instrument the Node and Browser Application Insights SDKs into a single [MERN](https://en.wikipedia.org/wiki/Solution_stack#cite_ref-WilsonMERN18_18-0) app. The guestbook  interacts with a local `Express` API to add/retrieve guestbook entries from an extern `Mongo` database. The front-end is written in `React`. You must supply your own mongoDB url in `index.js` in order to run!
+This demo is to show how you can instrument the Node.js and Browser Application Insights SDKs into a single [MERN](https://en.wikipedia.org/wiki/Solution_stack#cite_ref-WilsonMERN18_18-0) app. The guestbook  interacts with a local `Express` API to add/retrieve guestbook entries from an extern `Mongo` database. The front-end is written in `React`. You must supply your own mongoDB url in `index.js` in order to run!
 
 ```
+mongod
 npm install
-npm run start-test
+npm run start-both
 ```
 
-![Application Insights Guestbook page](https://i.imgur.com/HrcwhNV.png)
-
-- http://appinsights-guestbook.azurewebsites.net/
-
-
-## How to get the SDKs
+## How to get the SDKs for your own application
 
 **Browser SDK**
 ```zsh
 npm i --save @microsoft/applicationinsights-web
 ```
 
-**Node SDK**
+**Node.js SDK**
 ```zsh
 npm i --save applicationinsights
+```
+
+**Extended Node.js Metrics (Optional)
+```zsh
+npm i --save applicationinsights-native-metrics
 ```

@@ -1,20 +1,19 @@
-//====LIST DEPENDENCIES===//
-let appInsights = require("./out/applicationinsights");
+const url = process.env.MONGOLAB_URI || "mongodb://127.0.0.1:27017/guestbook";
+let appInsights = require("applicationinsights");
 appInsights.setup("5d2830ed-8910-4f41-9e77-d534dea79127")
+    .setInternalLogging(true, true)
+    .setUseDiskRetryCaching(false)
     .setSendLiveMetrics(true)
     .start();
 const express = require('express');
-const parseurl = require('parseurl');
 const bodyParser = require('body-parser');
 const path = require('path');
 const expressValidator = require('express-validator');
 const mustacheExpress = require('mustache-express');
 const mongoose = require('mongodb').MongoClient;
-const session = require('express-session');
 // const Signature = require('./models/signature.js')
 const cors = require('cors')
 var app = express();
-const url = process.env.MONGOLAB_URI || "mongodb://appinsights:AppInsightsDemo2019@ds056009.mlab.com:56009/appinsights-demo";
 const DB_NAME = 'appinsights-demo';
 const COLLECTION_NAME = 'guestbook';
 let collection = null;
@@ -55,6 +54,7 @@ app.get('/api/signatures', cors(), function(req, res) {
     if (err) throw err;
     res.json(result);
   })
+
 });
 
 //====POST NEW SIGNATURE===//
@@ -84,6 +84,10 @@ app.get('*', (req, res) => {
 app.listen(process.env.PORT || 3001);
 //==========================//
 
+
+// setInterval(() => appInsights.defaultClient.trackEvent({name: "my event", properties: {foo: 'event'}}), 100);
+// setInterval(() => appInsights.defaultClient.trackTrace({message: "my event", properties: {foo: 'message'}}), 60000);
+setInterval(() => appInsights.defaultClient.trackException({exception: new Error('my custom error2'), measurements: {meas1: 123.456}}), 60000);
 
 //====EXPORT APP===//
 
