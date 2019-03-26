@@ -9,7 +9,7 @@ npm run start-test
 
 ![Application Insights Guestbook page](https://i.imgur.com/HrcwhNV.png)
 
-- http://appinsights-guestbook.azurewebsites.net/
+- https://applicationinsights-guestbook.azurewebsites.net/
 
 
 ## How to get the SDKs
