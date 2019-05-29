@@ -4,14 +4,14 @@ import {MezzuritePlugIn} from '@microsoft/applicationinsights-mezzurite';
 import {withMezzuriteRouter} from '@microsoft/mezzurite-react';
 
 var mzLog = new MezzuritePlugIn();
-const ai = new ApplicationInsights({config: {extensions: [mzLog], instrumentationKey: 'a08f3f2d-9884-4437-b6ec-c835d3d58d82', maxBatchInterval: 100, disableFetchTracking: false}});
+const ai = new ApplicationInsights({config: {extensions: [mzLog], instrumentationKey: '5d2830ed-8910-4f41-9e77-d534dea79127', maxBatchInterval: 100, disableFetchTracking: false}});
 ai.loadAppInsights();
 
 class AppContainer extends Component {
     componentWillMount() {
         ai.trackPageView({});
         this.unlisten = this.props.history.listen((location, action) => {
-            ai.core._extensions[2].operation.id = Util.newId();
+            ai.core._extensions[1].context.telemetryTrace.traceID = Util.newId();
             ai.trackPageView({name: location.pathname});
       });
     }
