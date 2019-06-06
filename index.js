@@ -1,18 +1,17 @@
-//====LIST DEPENDENCIES===//
+const url = process.env.MONGOLAB_URI || "mongodb://127.0.0.1:27017/guestbook";
 let appInsights = require("applicationinsights");
 appInsights.setup("a08f3f2d-9884-4437-b6ec-c835d3d58d82").start();
+
+//====LIST DEPENDENCIES===//
 const express = require('express');
-const parseurl = require('parseurl');
 const bodyParser = require('body-parser');
 const path = require('path');
 const expressValidator = require('express-validator');
 const mustacheExpress = require('mustache-express');
 const mongoose = require('mongodb').MongoClient;
-const session = require('express-session');
 // const Signature = require('./models/signature.js')
 const cors = require('cors')
 var app = express();
-const url = process.env.MONGOLAB_URI;
 const DB_NAME = 'appinsights-demo';
 const COLLECTION_NAME = 'guestbook';
 let collection = null;

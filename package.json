@@ -5,14 +5,15 @@
   "scripts": {
     "postinstall": "npm install --prefix ./client/node_modules client",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "npx nodemon index.js",
-    "client": "npm run dev --prefix client",
-    "start-test": "concurrently \"npm:server\" \"npm:client\"",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "start-both": "concurrently \"npm:server\" \"npm:client\"",
     "start": "node index.js"
   },
   "license": "ISC",
   "dependencies": {
-    "applicationinsights": "^1.1.0",
+    "applicationinsights": "^1.4.0",
+    "applicationinsights-native-metrics": "0.0.5",
     "body-parser": "^1.18.0",
     "cors": "^2.8.4",
     "express": "^4.15.4",
@@ -24,6 +25,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1"
   }
 }

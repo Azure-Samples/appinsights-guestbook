@@ -3,7 +3,6 @@ import Reflux from 'reflux';
 import GuestStore from '../Stores';
 import axios from 'axios';
 import './GBForm.css';
-import { withMezzurite } from '@microsoft/mezzurite-react';
 
 class GBForm extends Reflux.Component {
 
@@ -88,4 +87,4 @@ class GBForm extends Reflux.Component {
 }
 
 GBForm.displayName = 'GBForm';
-export default withMezzurite(GBForm);
+export default (GBForm);
