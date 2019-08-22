@@ -5,6 +5,7 @@ This demo is to show how you can instrument the Node.js and Browser Application 
 ```
 mongod
 npm install
+npm --prefix ./client install ./client
 npm run start-both
 ```
 
