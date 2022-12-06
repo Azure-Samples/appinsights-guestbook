@@ -13,9 +13,9 @@
   "dependencies": {
     "applicationinsights": "^1.4.0",
     "applicationinsights-native-metrics": "0.0.5",
-    "body-parser": "^1.18.0",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.4",
-    "express": "^4.15.4",
+    "express": "^4.18.2",
     "express-session": "^1.15.5",
     "express-validator": "^4.1.1",
     "log4js": "^4.1.0",
