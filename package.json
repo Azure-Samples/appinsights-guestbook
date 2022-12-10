@@ -15,7 +15,7 @@
     "applicationinsights-native-metrics": "0.0.5",
     "body-parser": "^1.18.0",
     "cors": "^2.8.4",
-    "express": "^4.15.4",
+    "express": "^4.17.3",
     "express-session": "^1.15.5",
     "express-validator": "^4.1.1",
     "log4js": "^4.1.0",
